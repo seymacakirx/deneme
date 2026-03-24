@@ -1,0 +1,147 @@
+/* Temel Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(rgba(0, 0, 50, 0.7), rgba(0, 0, 50, 0.7)), url('hero-bg.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    background-color: #004aad;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #002f6c;
+}
+
+/* Services */
+.services {
+    padding: 80px 0;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.service-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Process */
+.process {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.process ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.process li {
+    background-color: #004aad;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+}
+
+/* Contact */
+.contact {
+    padding: 80px 0;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact button {
+    padding: 15px;
+    border: none;
+    background-color: #004aad;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact button:hover {
+    background-color: #002f6c;
+}
+
+/* Footer */
+footer {
+    background-color: #002f6c;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+    .service-cards, .process ul {
+        flex-direction: column;
+    }
+}
