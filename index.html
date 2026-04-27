@@ -1,75 +1,262 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden Visa Danışmanlık</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Time To Latvia</title>
+
+  <meta name="description" content="Time To Latvia — Letonya oturma izni ve yatırım danışmanlığı." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --fg: #1a1a1a;
+      --muted: #555555;
+      --card-bg: #faf7f7;
+      --card-border: #e6dede;
+
+      --accent: #8B0000;     /* bordo */
+      --accent2: #C1121F;    /* kırmızı */
+      --gold: #d4af37;
+
+      --shadow: 0 12px 30px rgba(0,0,0,.12);
+      --radius:16px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:'Inter', sans-serif;
+      background:var(--bg);
+      color:var(--fg);
+      line-height:1.55;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .container{ width:min(1100px, calc(100% - 40px)); margin:0 auto; }
+
+    /* TOPBAR */
+    .topbar{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:50;
+      background:#fff;
+      border-bottom:1px solid rgba(0,0,0,.08);
+      backdrop-filter: blur(10px);
+    }
+    .topbar__inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      height:76px;
+    }
+    .brand__logo{ height:70px; }
+
+    .nav{ display:flex; gap:20px; }
+    .nav a{ font-weight:600; }
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding-top:76px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#fff;
+      text-align:left;
+    }
+
+    .hero h1{
+      font-size:clamp(34px,5vw,56px);
+      margin:0 0 10px;
+    }
+    .hero p{
+      font-size:clamp(18px,3vw,26px);
+      margin:0;
+      font-weight:600;
+    }
+
+    /* SECTIONS */
+    .section{ padding:70px 0; }
+    .section--alt{ background:#fafafa; }
+
+    h2{ margin-bottom:10px; }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .card{
+      background:var(--card-bg);
+      border:1px solid var(--card-border);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+
+    /* PROCESS */
+    .process-container{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .process-card{
+      background:var(--card-bg);
+      border:1px solid var(--card-border);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .process-card h3{ margin:10px 0 6px; }
+
+    /* CONTACT */
+    .contact-form{
+      display:grid;
+      gap:10px;
+    }
+
+    input, textarea{
+      width:100%;
+      padding:12px;
+      border-radius:12px;
+      border:1px solid #ddd;
+      font-family:inherit;
+    }
+
+    button{
+      padding:12px;
+      border:none;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#fff;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .cards{ grid-template-columns:1fr; }
+      .process-container{ grid-template-columns:1fr; }
+      .nav{ display:none; }
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Header / Hero -->
-    <header class="hero">
-        <div class="container">
-            <h1>Golden Visa Başvurunuz Kolay ve Hızlı</h1>
-            <p>Uzman ekibimizle hayalinizdeki ülkede yaşama fırsatını yakalayın.</p>
-            <a href="#contact" class="cta-btn">Hemen Başvur</a>
-        </div>
-    </header>
 
-    <!-- Hizmetler -->
-    <section class="services">
-        <div class="container">
-            <h2>Hizmetlerimiz</h2>
-            <div class="service-cards">
-                <div class="card">
-                    <h3>Danışmanlık</h3>
-                    <p>Golden Visa başvuru sürecinde size adım adım destek sağlıyoruz.</p>
-                </div>
-                <div class="card">
-                    <h3>Başvuru Takibi</h3>
-                    <p>Tüm belgelerinizin eksiksiz ve zamanında teslim edilmesini sağlıyoruz.</p>
-                </div>
-                <div class="card">
-                    <h3>Yatırım Rehberi</h3>
-                    <p>Hangi yatırım seçeneklerinin size uygun olduğunu uzman ekibimiz belirliyor.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<header class="topbar">
+  <div class="container topbar__inner">
+    <img src="./assets/logo.png" class="brand__logo" alt="Logo">
 
-    <!-- Başvuru Süreci -->
-    <section class="process">
-        <div class="container">
-            <h2>Başvuru Süreci</h2>
-            <ul>
-                <li>1. Danışmanlık Talebi</li>
-                <li>2. Belgelerin Hazırlanması</li>
-                <li>3. Başvurunun Yapılması</li>
-                <li>4. Onay ve Yatırım</li>
-            </ul>
-        </div>
-    </section>
+    <nav class="nav">
+      <a href="#about">Hakkımızda</a>
+      <a href="#services">Hizmetler</a>
+      <a href="#process">Süreç</a>
+      <a href="#contact">İletişim</a>
+    </nav>
+  </div>
+</header>
 
-    <!-- İletişim -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>İletişim</h2>
-            <form id="contactForm">
-                <input type="text" placeholder="Adınız" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Mesajınız" required></textarea>
-                <button type="submit">Gönder</button>
-            </form>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>Time To Latvia</h1>
+    <p>Avrupa’da Yeni Bir Başlangıç</p>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Golden Visa Danışmanlık. Tüm hakları saklıdır.</p>
-        </div>
-    </footer>
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container">
+    <h2>Hakkımızda</h2>
+    <p>
+      Time To Latvia olarak, Letonya’da yatırım yaparak oturma izni almak isteyen bireylere
+      uzman danışmanlık hizmetleri sunuyoruz. Süreci güvenli, hızlı ve şeffaf şekilde yönetiyoruz.
+    </p>
+  </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- SERVICES -->
+<section id="services" class="section section--alt">
+  <div class="container">
+    <h2>Hizmetlerimiz</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Oturma İzni Başvurusu</h3>
+        <p>Başvuru sürecinizi baştan sona yönetiyoruz.</p>
+      </div>
+
+      <div class="card">
+        <h3>Yatırım Danışmanlığı</h3>
+        <p>Letonya’da en uygun yatırım seçeneklerini belirliyoruz.</p>
+      </div>
+
+      <div class="card">
+        <h3>Hukuki Süreç Yönetimi</h3>
+        <p>Tüm resmi işlemleri profesyonel şekilde takip ediyoruz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="section">
+  <div class="container">
+    <h2>Süreç</h2>
+
+    <div class="process-container">
+
+      <div class="process-card">
+        <h3>1. Yatırım Türü Seçimi</h3>
+        <p>Şirket yatırımı veya finansal yatırım seçeneklerinden biri belirlenir.</p>
+      </div>
+
+      <div class="process-card">
+        <h3>2. Şirket Kurulumu / Yatırım</h3>
+        <p>Letonya’da şirket kurulumu yapılır veya yatırım gerçekleştirilir.</p>
+      </div>
+
+      <div class="process-card">
+        <h3>3. Belgelerin Hazırlanması</h3>
+        <p>Pasaport ve gerekli evraklar hazırlanır.</p>
+      </div>
+
+      <div class="process-card">
+        <h3>4. Başvuru Süreci</h3>
+        <p>Oturma izni başvurusu resmi kurumlara iletilir.</p>
+      </div>
+
+      <div class="process-card">
+        <h3>5. Oturum İzni Onayı</h3>
+        <p>Başvuru onaylanır ve oturma izni verilir.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section section--alt">
+  <div class="container">
+    <h2>İletişim</h2>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Ad Soyad" required>
+      <input type="email" placeholder="E-posta" required>
+      <textarea rows="5" placeholder="Mesajınız" required></textarea>
+      <button type="submit">Gönder</button>
+    </form>
+  </div>
+</section>
+
 </body>
 </html>
