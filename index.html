@@ -298,16 +298,24 @@
           <div><strong>Adres:</strong> Fenerbahçe Mah. Bağdat Cd. No:84/2 Kadıköy/İstanbul</div>
         </div>
       </div>
-      <div>
-        <form class="contact-form card" id="contactForm">
-          <label>Ad Soyad<input type="text" name="name" placeholder="Adınız Soyadınız" required></label>
-          <label>E-posta<input type="email" name="email" placeholder="ornek@mail.com" required></label>
-          <label>Mesaj<textarea name="message" rows="5" placeholder="Lütfen kısaca ihtiyacınızı yazın..." required></textarea></label>
-          <button type="submit">Gönder</button>
-        </form>
-        <div id="thankMessage" style="display:none; color:black; margin-top:12px;">
-          Teşekkürler! En kısa sürede size ulaşacağız.
-        </div>
+        <!-- Formspree Formu -->
+      <form class="card form" action="https://formspree.io/f/mqewookn" method="POST">
+        <label>
+          Ad Soyad
+          <input type="text" name="name" placeholder="Adınız Soyadınız" required>
+        </label>
+        <label>
+          E-posta
+          <input type="email" name="email" placeholder="ornek@mail.com" required>
+        </label>
+        <label>
+          Mesaj
+          <textarea name="message" rows="5" placeholder="Kısaca ihtiyacınızı yazın..." required></textarea>
+        </label>
+        <button class="btn btn--primary" type="submit">Gönder</button>
+      </form>
+</div>
+  </section>
       </div>
     </div>
   </section>
