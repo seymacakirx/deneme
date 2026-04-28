@@ -111,7 +111,6 @@ a{ color:inherit; text-decoration:none; }
   z-index:0;
 }
 
-/* 🔥 LIGHTER OVERLAY (FIXED) */
 .hero__overlay{
   position:absolute;
   inset:0;
@@ -119,7 +118,6 @@ a{ color:inherit; text-decoration:none; }
   z-index:1;
 }
 
-/* HERO CONTENT */
 .hero__content{
   position:relative;
   z-index:2;
@@ -142,7 +140,7 @@ a{ color:inherit; text-decoration:none; }
   max-width: 56ch;
 }
 
-/* ================= BUTTONS ================= */
+/* ================= BUTTON ================= */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -205,7 +203,7 @@ input:focus, textarea:focus{
   box-shadow: 0 0 0 3px rgba(158,27,50,.15);
 }
 
-/* ================= CONTACT (YAN YANA) ================= */
+/* ================= CONTACT ================= */
 #contact .grid{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -213,40 +211,63 @@ input:focus, textarea:focus{
   align-items:start;
 }
 
-/* ================= SÜREÇ (SLIDER) ================= */
-.fleet-track{
-  display:flex;
-  gap:18px;
-  overflow-x:auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom:10px;
+/* ================= TIMELINE (YENİ SİSTEM) ================= */
+.timeline{
+  position:relative;
+  margin-top:40px;
+  padding-left:40px;
 }
 
-/* kartlar */
-.fleet-card{
-  min-width:300px;
-  flex:0 0 auto;
-  scroll-snap-align:start;
+/* orta çizgi */
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:18px;
+  top:0;
+  bottom:0;
+  width:2px;
+  background: linear-gradient(var(--accent), var(--accent2));
+}
+
+/* item */
+.timeline-item{
+  position:relative;
+  margin-bottom:40px;
+  display:flex;
+  align-items:flex-start;
+}
+
+/* nokta */
+.timeline .dot{
+  position:absolute;
+  left:-2px;
+  top:6px;
+  width:14px;
+  height:14px;
+  background: var(--accent);
+  border:3px solid white;
+  border-radius:50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,.15);
+}
+
+/* içerik */
+.timeline .content{
   background:white;
   border:1px solid rgba(158,27,50,.15);
   border-radius:16px;
+  padding:16px 18px;
   box-shadow: var(--shadow);
-  padding:10px;
-}
-
-.fleet-card img{
   width:100%;
-  border-radius:12px;
 }
 
-/* scrollbar gizle */
-.fleet-track::-webkit-scrollbar{
-  display:none;
+.timeline .content h3{
+  margin:0 0 6px;
+  color: var(--accent);
 }
 
-.fleet-track{
-  scrollbar-width:none;
+.timeline .content p{
+  margin:0;
+  color: var(--muted);
 }
 
 /* ================= FOOTER ================= */
@@ -266,6 +287,14 @@ input:focus, textarea:focus{
 @media (max-width:768px){
   #contact .grid{
     grid-template-columns:1fr;
+  }
+
+  .timeline{
+    padding-left:30px;
+  }
+
+  .timeline::before{
+    left:14px;
   }
 }
 
