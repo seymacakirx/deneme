@@ -97,3 +97,38 @@ document.addEventListener("DOMContentLoaded", () => {
     track.addEventListener("pointerleave", stopDrag);
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const successMessage = document.getElementById("successMessage");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mqewookn", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json"
+        },
+        body: formData
+      });
+
+      if (response.ok) {
+        form.reset();
+        successMessage.style.display = "block";
+
+        setTimeout(() => {
+          successMessage.style.display = "none";
+        }, 4000);
+      } else {
+        alert("Mesaj gönderilemedi. Tekrar deneyin.");
+      }
+
+    } catch (error) {
+      console.error(error);
+      alert("Bağlantı hatası oluştu.");
+    }
+  });
+});
