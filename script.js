@@ -46,29 +46,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- Form Gönderimi (Formspree) ---
-  const contactForm = document.getElementById("contactForm");
-  const thankMessage = document.getElementById("thankMessage");
+    // --- AJAX FORMSPREE GÖNDERİMİ ---
+  const form = document.querySelector('form.card.form');
+  if(form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Sayfanın yenilenmesini engelle
 
-  if (contactForm) {
-    contactForm.addEventListener("submit", function(e) {
-      e.preventDefault();
-      const formData = new FormData(contactForm);
+      const formData = new FormData(form);
 
       fetch("https://formspree.io/f/mqewookn", {
         method: "POST",
         body: formData,
-        headers: { "Accept": "application/json" }
+        headers: {
+          'Accept': 'application/json'
+        }
       })
       .then(response => {
         if (response.ok) {
-          contactForm.reset();
-          if (thankMessage) {
-            thankMessage.style.display = "block";
-            setTimeout(() => { thankMessage.style.display = "none"; }, 5000);
-          } else {
-            alert("Mesajınız gönderildi, teşekkürler!");
-          }
+          console.log("Mesaj başarıyla gönderildi!");
+          form.reset(); // formu temizle
+          alert("Mesajınız gönderildi, teşekkürler!"); // istersen alert yerine HTML mesaj divi kullan
         } else {
           return response.json().then(data => {
             throw new Error(data.error || "Bir hata oluştu!");
@@ -81,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+});
 
   // --- Filolar Slider (Opsiyonel) ---
   const track = document.querySelector(".fleet-track");
